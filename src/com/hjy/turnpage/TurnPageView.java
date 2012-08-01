@@ -336,7 +336,9 @@ public class TurnPageView extends View {
 		}
 		Log.d(TAG, "degree = " + degree);
 		
-		// 翻起页阴影顶点与touch点的距离
+		// 计算阴影顶点的坐标
+		//这样计算的原理是：假设阴影边与当前翻起的书页边距离为25px, 在阴影顶点和触摸顶点与x轴垂直
+		//的情况下，阴影顶点与触摸顶点的距离则为25 * 1.414，在其他情况下，则要根据其夹角来计算了
 		double d1 = (float) 25 * 1.414 * Math.cos(degree);
 		double d2 = (float) 25 * 1.414 * Math.sin(degree);
 		Log.d(TAG, "d1 = " + d1 + ",d2 = " + d2);
